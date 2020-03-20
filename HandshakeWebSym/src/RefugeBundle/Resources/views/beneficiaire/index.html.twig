@@ -1,0 +1,59 @@
+
+
+{% block body %}
+    <h1>Beneficiaires list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Beneficiaireid</th>
+                <th>Aideid</th>
+                <th>Nombeneficiaire</th>
+                <th>Prenombeneficiaire</th>
+                <th>Email</th>
+                <th>Datenaissance</th>
+                <th>Ville</th>
+                <th>Telephone</th>
+                <th>Adressegps</th>
+                <th>Role</th>
+                <th>Besoin</th>
+                <th>Nationalite</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for beneficiaire in beneficiaires %}
+            <tr>
+                <td><a href="{{ path('beneficiaire_show', { 'beneficiaireid': beneficiaire.beneficiaireid }) }}">{{ beneficiaire.beneficiaireid }}</a></td>
+                <td>{{ beneficiaire.userid }}</td>
+                <td>{{ beneficiaire.nombeneficiaire }}</td>
+                <td>{{ beneficiaire.prenombeneficiaire }}</td>
+                <td>{{ beneficiaire.email }}</td>
+                <td>{% if beneficiaire.datenaissance %}{{ beneficiaire.datenaissance|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ beneficiaire.ville }}</td>
+                <td>{{ beneficiaire.telephone }}</td>
+                <td>{{ beneficiaire.adressegps }}</td>
+                <td>{{ beneficiaire.role }}</td>
+                <td>{{ beneficiaire.besoin }}</td>
+                <td>{{ beneficiaire.nationalite }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('beneficiaire_show', {'beneficiaireid': beneficiaire.beneficiaireid }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('beneficiaire_edit', {'beneficiaireid': beneficiaire.beneficiaireid }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('beneficiaire_new') }}">Create a new beneficiaire</a>
+        </li>
+    </ul>
+{% endblock %}

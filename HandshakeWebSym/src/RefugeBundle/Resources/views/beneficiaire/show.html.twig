@@ -1,0 +1,72 @@
+
+
+{% block body %}
+    <h1>Beneficiaire</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Beneficiaireid</th>
+                <td>{{ beneficiaire.beneficiaireid }}</td>
+            </tr>
+            <tr>
+                <th>Aideid</th>
+                <td>{{ beneficiaire.userid }}</td>
+            </tr>
+            <tr>
+                <th>Nombeneficiaire</th>
+                <td>{{ beneficiaire.nombeneficiaire }}</td>
+            </tr>
+            <tr>
+                <th>Prenombeneficiaire</th>
+                <td>{{ beneficiaire.prenombeneficiaire }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ beneficiaire.email }}</td>
+            </tr>
+            <tr>
+                <th>Datenaissance</th>
+                <td>{% if beneficiaire.datenaissance %}{{ beneficiaire.datenaissance|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ beneficiaire.ville }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ beneficiaire.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Adressegps</th>
+                <td>{{ beneficiaire.adressegps }}</td>
+            </tr>
+            <tr>
+                <th>Role</th>
+                <td>{{ beneficiaire.role }}</td>
+            </tr>
+            <tr>
+                <th>Besoin</th>
+                <td>{{ beneficiaire.besoin }}</td>
+            </tr>
+            <tr>
+                <th>Nationalite</th>
+                <td>{{ beneficiaire.nationalite }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('beneficiaire_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('beneficiaire_edit', { 'beneficiaireid': beneficiaire.beneficiaireid }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

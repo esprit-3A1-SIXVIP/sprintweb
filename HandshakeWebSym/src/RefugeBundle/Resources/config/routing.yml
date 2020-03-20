@@ -1,0 +1,23 @@
+refuge_homepage:
+    path:     /
+    defaults: { _controller: RefugeBundle:Default:index }
+
+beneficiaire_new:
+    path:   /add
+    defaults: { _controller: RefugeBundle:Beneficiaire:new}
+
+beneficiaire_index:
+    path:   /read
+    defaults: {_controller: RefugeBundle:Beneficiaire:index}
+
+beneficiaire_edit:
+    path:   /edit/{beneficiaireid}
+    defaults: {_controller: RefugeBundle:Beneficiaire:edit}
+
+beneficiaire_show:
+    path:   /show/{beneficiaireid}
+    defaults: {_controller: RefugeBundle:Beneficiaire:show}
+
+beneficiaire_delete:
+    path:   /delete/{beneficiaireid}
+    defaults: {_controller: RefugeBundle:Beneficiaire:delete}

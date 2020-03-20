@@ -1,0 +1,24 @@
+beneficiaire_index:
+    path:     /
+    defaults: { _controller: "RefugeBundle:Beneficiaire:index" }
+    methods:  GET
+
+beneficiaire_show:
+    path:     /{beneficiaireid}/show
+    defaults: { _controller: "RefugeBundle:Beneficiaire:show" }
+    methods:  GET
+
+beneficiaire_new:
+    path:     /new
+    defaults: { _controller: "RefugeBundle:Beneficiaire:new" }
+    methods:  [GET, POST]
+
+beneficiaire_edit:
+    path:     /{beneficiaireid}/edit
+    defaults: { _controller: "RefugeBundle:Beneficiaire:edit" }
+    methods:  [GET, POST]
+
+beneficiaire_delete:
+    path:     /{beneficiaireid}/delete
+    defaults: { _controller: "RefugeBundle:Beneficiaire:delete" }
+    methods:  DELETE

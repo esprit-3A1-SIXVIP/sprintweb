@@ -1,0 +1,6 @@
+user_homepage:
+    path:     /
+    defaults: { _controller: UserBundle:Default:index }
+acceuil:
+    path:   /test
+    defaults: { _controller: UserBundle:Default:layout}
